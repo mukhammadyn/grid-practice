@@ -1,0 +1,21 @@
+.download-link {
+  padding: 15px 30px;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  color: $color-primary;
+  background-color: #ffffff;
+  border-radius: 10px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+@include breakpoint-down(820px) {
+  .download-link {
+    padding: 13px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,102 @@
+.site-navigation {
+  flex-grow: 1;
+  margin-left: 57px;
+  padding-right: 8px;
+}
+
+.site-navigation__list {
+  max-width: 785px;
+  display: flex;
+  align-items: baseline;
+  @include list-unstyled;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow-y: hidden;
+}
+
+.site-navigation__item {
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.site-navigation__link {
+  position: relative;
+  z-index: 1;
+  font-family: $font-secondary;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.7;
+
+  &::after {
+    display: none;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    background-image: url(../img/icon/gradient.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    content: '';
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.site-navigation__link--active {
+  opacity: 1;
+
+  &::after {
+    display: block;
+  }
+}
+
+@include breakpoint-down(820px) {
+
+  .site-navigation__item {
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+}
+
+@include breakpoint-down(655px) {
+
+  .site-navigation {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: #ffffff;
+  }
+
+  .site-navigation__list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-navigation__item {
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  .site-navigation__link {
+    display: block;
+    padding: 14px;
+    color: $color-primary;
+  }
+
+}
